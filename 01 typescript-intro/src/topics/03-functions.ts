@@ -10,23 +10,23 @@ const result:number = addNumbers(3,4)
 const multIply =(firsNumber:number, secondNumber?:number, base:number=2):number =>{
     return firsNumber * base
 }
-
+//* DEFINCIÓN DE INTERFACE CON FUNCIÓN; AGREGAMOS LA FUNCIÓN(NO LA LÓGICA) Y EL VALOR DE RETORNO
 interface Character {
     name:string,
-    pv:number,
+    hp:number,
     showHP: ()=>void
 
 }
 
 const healCharacter= (character:Character, amount:number) =>{
-    character.pv +=amount
+    character.hp +=amount
 }
 
 const strider:Character={
     name:"Strider",
-    pv:50,
+    hp:50,
     showHP(){
-        console.log(this.pv)
+        console.log(this.hp)
     }
 }
 
