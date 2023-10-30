@@ -1,21 +1,10 @@
 <h1>DBZ CHARACTERS</h1>
-<hr />
-<div class="row">
-  <div class="col">
-    <h4>LIST</h4>
-    <hr />
+<div class="col">
+  <hr />
+  <app-dbz-list [characterList]="character"></app-dbz-list>
 
-    <ul>
-      <li class="list-group-item">Krilin-500</li>
-      <li class="list-group-item">Goku - 10.000</li>
-    </ul>
-  </div>
-  <div class="col">
-    <h4>Add character</h4>
-    <form class="row">
-      <input type="text" placeholder="Name" class="form-control mb-2" />
-      <input type="number" placeholder="Power" class="form-control mb-2" />
-      <button type="submit" class="btn btn-primary">Add</button>
-    </form>
-  </div>
+</div>
+<div class="row">
+
+  <app-add-character (onNewCharacter)="onNewCharacter($event)"></app-add-character>
 </div>
