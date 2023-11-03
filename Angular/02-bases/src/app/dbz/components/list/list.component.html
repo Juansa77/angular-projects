@@ -1,21 +1,34 @@
 <ul class="list-group">
   <h4>LIST</h4>
   <li
-    *ngFor="let character of characterList; let index = index,
-    let isFirst=first;
-    let isLast= last;
-    let isEven= even;
-    let isOdd= odd;"
-    class="list-group-item"
-[ngClass]="{'list-group-item-dark':isLast, 'list-group-item-primary':isEven}"
-    >
-    <span class="text-primary">{{ index +1 }}. </span>
-    <span>{{ character.name }}</span>
-    <strong> Power: </strong>
-    <span>{{ character.power }}</span>
-        <!-- <span> Es el primero: {{isFirst}}</span>
-        <span> Es el último: {{isLast}}</span>
-        <span> Es par: {{isEven}}</span>
-        <span> Es impar: {{isOdd}}</span> -->
+    *ngFor="
+      let character of characterList;
+      let index = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd
+
+    "
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+      'list-group-item-dark': isLast,
+      'list-group-item-primary': isEven
+    }"
+  >
+ <div>
+  <span class="text-primary">{{ index + 1 }}. </span>
+  <strong> ID: </strong>
+  <span>{{character.id}}</span>
+  <strong> Name: </strong>
+  <span>{{ character.name }}</span>
+  <strong> Power: </strong>
+  <span>{{ character.power }}</span>
+  <!-- <span> Es el primero: {{isFirst}}</span>
+      <span> Es el último: {{isLast}}</span>
+      <span> Es par: {{isEven}}</span>
+      <span> Es impar: {{isOdd}}</span> -->
+ </div>
+ <button class="btn btn-danger" (click)="onDeleteCharacterEmitter(character.id )">X</button>
   </li>
 </ul>

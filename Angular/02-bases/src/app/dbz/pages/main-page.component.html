@@ -1,10 +1,10 @@
 <h1>DBZ CHARACTERS</h1>
 <div class="col">
   <hr />
-  <app-dbz-list [characterList]="character"></app-dbz-list>
+  <app-dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></app-dbz-list>
 
 </div>
 <div class="row">
 
-  <app-add-character (onNewCharacter)="onNewCharacter($event)"></app-add-character>
+  <app-add-character (onNewCharacter)="addCharacter($event)"></app-add-character>
 </div>
