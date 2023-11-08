@@ -1,24 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { CounterModule } from './counter/components/counter.module';
-import { HeroesModule } from './heroes/heroes.module';
-import { DbzModule } from './dbz/dbz.module';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { GifsModule } from './gifs/gifs.module';
+import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './gifs/pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SidebarComponent,
-    HomePageComponent
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    CounterModule,
-    HeroesModule,
-    DbzModule
+    GifsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
