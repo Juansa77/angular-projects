@@ -47,8 +47,7 @@ export class GifsService {
     });
     //*Método clásico JS
     // fetch(
-    //   'http://api.giphy.com/v1/gifs/search?api_key=GfJvHu7hBPYyDIG1yKI8Jq5sMpOmHxsK&q=valorant&limit=10'
-    // )
+    //   'http://api.giphy.com/v1/gifs/search?
     //   .then((resp) => resp.json())
     //   .then((data) => console.log(data));
   }
