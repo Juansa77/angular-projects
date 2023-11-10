@@ -14,7 +14,7 @@ export class GifsService {
   //*------SERVICIO PARA CAPTURAR LOS DATOS DEL SEARCH INPUT Y COMUNICARLO ENTRE COMPONENTES
   //*Definimos la propiedad donde almacenamos las búsquedas
   private _tagHistory: string[] = [];
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {this.loadLocalHistory()}
   //*Añadir un nuevo tag al array, que se manejará desde searchbox
 
   //* Método para validaciones del input
@@ -23,11 +23,32 @@ export class GifsService {
     //*Filter para no tener búsquedas repetidas
     if (this._tagHistory.includes(tag)) {
       this._tagHistory = this._tagHistory.filter((oldTag) => oldTag != tag);
+
     }
 
     //*Limitamos a 10 los resultados hacendo un splice de los index 0 a 10
     this._tagHistory = this._tagHistory.splice(0, 10);
+    this.saveToLocalStorage()
   }
+
+
+//*Método para grabar en Localstorage  las búsquedas
+
+private saveToLocalStorage():void{
+  localStorage.setItem("history", JSON.stringify(this._tagHistory))
+}
+
+//* Salvar las búsquedas en local
+
+private loadLocalHistory():void{
+if(!localStorage.getItem("history"))return
+
+//* NonNull operator ! al final para decirle que siempre le vendrá DATA
+  this._tagHistory = JSON.parse(localStorage.getItem("history")!)
+  if(this._tagHistory.length ===0) return
+  //*llamamos a searchTag con el primer valor de búsqueda del historial
+  this.searchTag(this._tagHistory[0])
+}
 
   public searchTag(tag: string): void {
     //*Usamos unshift para agregar nuevo elemento al principo de array
