@@ -20,6 +20,7 @@ export class CountryPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.activatedRoute.params
       .pipe(
         switchMap(({ id }) =>

@@ -12,11 +12,18 @@ export class ByCapitalPageComponent {
   constructor(private countriesService: CountriesService){}
 public countries:Country[]=[]
 
+//* Propiedad para carga de spinner
+public isLoading: boolean= false
+
+
 
 //*Función que utiliza la función del servicio
   searchByCapital(term:string):void{
+    this.isLoading=true
   this.countriesService.searchCapital(term).subscribe(countries =>{
-    this.countries =countries}
+    this.countries =countries
+  this.isLoading=false
+  }
     )
   }
 }
