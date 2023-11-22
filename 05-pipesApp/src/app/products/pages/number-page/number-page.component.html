@@ -1,1 +1,26 @@
-<p>number-page works!</p>
+<p-panel header="Numeric Pipes"  class="p-1">
+
+  <p>Common Module included Pipes</p>
+</p-panel>
+
+<div class="grid">
+
+  <div class="col-12 md:col-4">
+    <p-card header="Net sales">
+{{totalSales + 1258 |number:"1.2-2"}}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Total sales">
+{{totalSales |currency:"USD": "symbol-narrow":"1.4-4"}}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Percent">
+{{percent |percent: "1.2-2"}}
+    </p-card>
+  </div>
+
+  </div>
