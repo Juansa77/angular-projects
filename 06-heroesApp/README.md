@@ -5,4 +5,4 @@
 1. Clonar el proyecto
 2. Ejecutar npm install
 3. Levantar backend "npm run backend"
-4. Ejecutar npm start o ng s --o
+4. Ejecutar "npm start" o "ng s --o"
