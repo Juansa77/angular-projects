@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "usuario": "John Doe",
+      "user": "John Doe",
       "email": "john.due@gmail.com"
     }
   ],
@@ -166,15 +166,6 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
-    },
-    {
-      "id": "mq966y4",
-      "superhero": "Lobezno",
-      "publisher": "Marvel Comics",
-      "alter_ego": "Logan",
-      "first_appearance": "The Hulk",
-      "characters": "James",
-      "alt_img": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2018/06/regreso-lobezno.jpg?tf=1200x"
     }
   ]
 }
