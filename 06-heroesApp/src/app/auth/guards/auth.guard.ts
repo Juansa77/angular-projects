@@ -19,16 +19,6 @@ export class AuthGuard implements CanMatch, CanActivate {
     ) {}
 
   private checkAuthStatus():boolean|Observable<boolean>{
-    return this.authService.checkAuthentification()
-  }
-
-  canMatch(
-    route: Route,
-    segments: UrlSegment[]
-  ): boolean|Observable<boolean>  {
-    // console.log('Can Match');
-    // console.log({ route, segments });
-    // return true
     return this.authService.checkAuthentification().pipe(
       tap(isAuthenticated => {
         if(!isAuthenticated) {
@@ -38,6 +28,16 @@ export class AuthGuard implements CanMatch, CanActivate {
       })
     )
 
+  }
+
+  canMatch(
+    route: Route,
+    segments: UrlSegment[]
+  ): boolean|Observable<boolean>  {
+    // console.log('Can Match');
+    // console.log({ route, segments });
+    // return true
+    return this.checkAuthStatus();
 
   }
 

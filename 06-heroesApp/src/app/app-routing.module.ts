@@ -10,8 +10,8 @@ const routes: Routes = [
     //*Cargando las rutas del módulo auth
     path:"auth",
     loadChildren:() =>import('./auth/auth.module').then(m =>m.AuthModule),
-    canActivate:[PublicGuard],
-    canMatch:[PublicGuard]
+   canActivate:[PublicGuard],
+     canMatch:[PublicGuard]
   },
   {
     //*Cargando las rutas del módulo heroes
