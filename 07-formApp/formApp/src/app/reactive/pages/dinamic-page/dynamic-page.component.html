@@ -10,8 +10,8 @@
             <input class="form-control"
             formControlName="name"
                    placeholder="Nombre de la persona">
-            <span class="form-text text-danger">
-                   error message
+            <span *ngIf="isValidField('name')" class="form-text text-danger">
+                   {{getFieldError("name")}}
             </span>
         </div>
     </div>
@@ -38,21 +38,23 @@
     <!-- Lista de Juegos Favoritos -->
     <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Favoritos</label>
-        <div class="col-sm-9" formArrayName="favouriteGames">
+        <div class="col-sm-9" formArrayName="favoriteGames">
 
-            <div class="mb-1" *ngFor="let favourite of gameList.controls; let i =index" >
+            <div class="mb-1" *ngFor="let favourite of favoriteGames.controls; let index =index" >
 
                 <div class="input-group">
-                    <input [formControlName]="i" class="form-control">
+                    <input [formControlName]="index" class="form-control">
 
                     <button class="btn btn-outline-danger"
                             type="button">
                       Eliminar
                   </button>
                 </div>
-                <span class="form-text text-danger">
-                   Este campo es requerido
-                </span>
+
+                  <span *ngIf="isValidFieldInArray(favoriteGames, index)" class="form-text text-danger">
+                    {{getFieldError("name")}}
+             </span>
+
 
             </div>
 
