@@ -6,7 +6,7 @@ const targetPath= "./src/environments/environment.ts"
 const envFileContent =`
 export const environment ={
 mapbox_key: "${process.env['MAPBOX_KEY']}",
-otra: "PROPIEDAD"
+access_token: "${process.env['ACCESS_TOKEN']}"
 };
 `
 mkdirSync("./src/environments", {recursive:true})
